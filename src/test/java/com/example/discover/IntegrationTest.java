@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
 class IntegrationTest {
 
     @Test
-    void test() {
+    void main_validInput_applicationStartsAndWorksCorrectly() {
         mockInput();
-        DiscovertaskApplication.main(new String[0]);
+        assertDoesNotThrow(() -> DiscovertaskApplication.main(new String[0]));
     }
 
     private void mockInput() {

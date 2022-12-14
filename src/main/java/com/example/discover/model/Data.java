@@ -14,14 +14,4 @@ public class Data {
     private final int innRangeHigh;
 
     private final String pattern;
-
-    public Data(String issuerName, int supportedPanLength, int prefixLength, int innRangeLow, int innRangeHigh,
-                String pattern) {
-        this.issuerName = issuerName;
-        this.supportedPanLength = supportedPanLength;
-        this.prefixLength = prefixLength;
-        this.innRangeLow = innRangeLow;
-        this.innRangeHigh = innRangeHigh;
-        this.pattern = pattern;
-    }
 }

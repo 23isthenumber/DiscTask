@@ -17,8 +17,7 @@ class InputHandlerTest {
     void getInput_validInput_Successful() {
         //given
         String expectedResponse = "4444444444444444";
-        InputStream in = new ByteArrayInputStream(expectedResponse.getBytes());
-        System.setIn(in);
+        injectInput(expectedResponse);
         String actualResponse;
         //when
         actualResponse = inputHandler.getInput();
@@ -30,9 +29,13 @@ class InputHandlerTest {
     void getInput_invalidInput_throwInvalidInputException() {
         //given
         String input = "a tester walks into a bar to order a car";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
+        injectInput(input);
         //then when
         assertThrows(InvalidInputException.class, inputHandler::getInput);
+    }
+
+    private void injectInput(String expectedResponse) {
+        InputStream in = new ByteArrayInputStream(expectedResponse.getBytes());
+        System.setIn(in);
     }
 }

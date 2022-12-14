@@ -22,8 +22,8 @@ public class DataCache {
             String line = br.readLine();
             while (line != null) {
                 String[] attributes = line.split(",");
-                Data book = createData(attributes);
-                data.add(book);
+                Data createdData = createData(attributes);
+                data.add(createdData);
                 line = br.readLine();
             }
         } catch (IOException ioe) {
